@@ -11,15 +11,6 @@ jobs:
     
       - name: checkout
         uses: actions/checkout@v4
-        
-      - name: checkout iptv-org/epg repo
-        uses: actions/checkout@v4
-        with:
-         repository: iptv-org/epg
-         path: iptv-org-epg
-
-      - name: List files
-        run: ls -R  # Pour vérifier les fichiers et chemins
 
       - name: update EPG
         run: sh ../EPG/epg.sh
