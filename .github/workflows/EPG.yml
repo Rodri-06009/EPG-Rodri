@@ -19,16 +19,16 @@ jobs:
          path: iptv-org-epg
 
       - name: update EPG
-        run: sh EPG/epg.sh
+        run: sh ../EPG/epg.sh  # Chemin corrigé
 
       - name: setup git config
         run: |
           git config user.name "Github Action"
-          git config user.email "<>"
+          git config user.email "action@github.com"  # Email corrigé
 
       - name: commit
         run: |
           git pull
           cd EPG && git add .
-          git commit -m "Update EPG"
-          git push origin main
+          git commit -m "Update EPG" || echo "No changes to commit"  # Gérer l'absence de modifications
+          git push origin main  # Vérifiez que 'main' est la bonne branche
