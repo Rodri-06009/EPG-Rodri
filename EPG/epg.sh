@@ -1,6 +1,7 @@
 #!/bin/bash
 
-npm install
+cd /home/runner/work/EPG-Rodri/EPG-Rodri/iptv-org-epg && npm install
+
 
 # Meo EPG
 
