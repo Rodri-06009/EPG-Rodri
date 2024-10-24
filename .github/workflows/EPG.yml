@@ -19,7 +19,7 @@ jobs:
          path: iptv-org-epg
 
       - name: update EPG
-        run: sh ../EPG/epg.sh  # Chemin corrigé
+        run: ../EPG/epg.sh  # Chemin corrigé
 
       - name: setup git config
         run: |
