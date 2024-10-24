@@ -23,6 +23,8 @@ npm run grab -- --channels=sites/mi.tv/mi.tv_br.channels.xml --output=../EPG/epg
 
 npm run grab -- --site=vodafone.de --output=../EPG/epg-vodafone-de.xml --days=7
 
+cd ../EPG
+
 # Compress EPG xml files
 
 xz -k -f -9 epg*.xml && gzip -k -f -9 epg*.xml
