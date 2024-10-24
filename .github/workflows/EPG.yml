@@ -18,17 +18,20 @@ jobs:
          repository: iptv-org/epg
          path: iptv-org-epg
 
+      - name: List files
+        run: ls -R  # Pour vérifier les fichiers et chemins
+
       - name: update EPG
-        run: ../EPG/epg.sh  # Chemin corrigé
+        run: sh ../EPG/epg.sh
 
       - name: setup git config
         run: |
           git config user.name "Github Action"
-          git config user.email "action@github.com"  # Email corrigé
+          git config user.email "action@github.com"
 
       - name: commit
         run: |
           git pull
           cd EPG && git add .
-          git commit -m "Update EPG" || echo "No changes to commit"  # Gérer l'absence de modifications
-          git push origin main  # Vérifiez que 'main' est la bonne branche
+          git commit -m "Update EPG" || echo "No changes to commit"
+          git push origin main  # Ajustez si nécessaire
